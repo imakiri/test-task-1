@@ -1,0 +1,4 @@
+protoc v1/service.proto -I ./api/proto/service -I ./api/proto/protoc -I ./api/proto/googleapis --go_out=./internal/proto/v1 --go_opt=module=github.com/imakiri/test-task-1/internal/proto/v1
+protoc v1/service.proto -I ./api/proto/service -I ./api/proto/protoc -I ./api/proto/googleapis --go-grpc_out=./internal/proto/v1 --go-grpc_opt=module=github.com/imakiri/test-task-1/internal/proto/v1
+protoc v1/service.proto -I ./api/proto/service -I ./api/proto/protoc -I ./api/proto/googleapis --grpc-gateway_out ./internal/proto --grpc-gateway_opt logtostderr=true --grpc-gateway_opt paths=source_relative --grpc-gateway_opt generate_unbound_methods=true
+protoc v1/service.proto -I ./api/proto/service -I ./api/proto/protoc -I ./api/proto/googleapis --openapiv2_out ./api/proto/service --openapiv2_opt logtostderr=true

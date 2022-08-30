@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  web:
+    image: imakiri/test-task-1:latest
+    entrypoint: ["./launcher", "--port-grpc=25565", "--port-rest=80", "--port-swagger_ui=80"]
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "25565:25565"
+    networks:
+      - web
+    restart: always
+networks:
+  web:
+    driver: bridge

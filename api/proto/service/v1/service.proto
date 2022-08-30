@@ -1,0 +1,24 @@
+syntax = "proto3";
+package v1;
+option go_package = "github.com/imakiri/test-task-1/internal/proto/v1";
+
+import "google/api/annotations.proto";
+
+message Request {
+  uint64 inn = 1;
+}
+
+message Response {
+  uint64 INN = 1;
+  uint64 KPP = 2;
+  string name = 3;
+  string director = 4;
+}
+
+service Service {
+  rpc Get(Request) returns (Response) {
+    option (google.api.http) = {
+      get: "/v1/get"
+    };
+  };
+}
